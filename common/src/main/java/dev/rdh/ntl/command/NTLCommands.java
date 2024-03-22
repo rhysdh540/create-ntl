@@ -1,30 +1,23 @@
 package dev.rdh.ntl.command;
 
-import com.mojang.brigadier.CommandDispatcher;
-
-import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.tree.CommandNode;
-import com.mojang.brigadier.tree.LiteralCommandNode;
-
-
-import dev.rdh.ntl.CreateNTL;
+import java.util.List;
 
 import com.simibubi.create.foundation.utility.Components;
-import com.simibubi.create.infrastructure.command.AllCommands;
+
+import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import com.mojang.brigadier.context.CommandContext;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.ClickEvent;
-import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.ComponentUtils;
 import net.minecraft.network.chat.HoverEvent;
 import net.minecraft.network.chat.MutableComponent;
 
-import java.util.Collections;
-import java.util.List;
+import dev.rdh.ntl.CreateNTL;
 
 public class NTLCommands {
 	public static void register(CommandDispatcher<CommandSourceStack> dispatcher, boolean dedicated) {
@@ -33,19 +26,14 @@ public class NTLCommands {
 		);
 		LiteralArgumentBuilder<CommandSourceStack> base = Commands.literal(CreateNTL.ID)
 			.executes(context -> {
-				message(context, CreateNTL.NAME + " v" + CreateNTL.VERSION + " by rdh\nVisit us on:");
-				MutableComponent link = MutableComponent.create(CommonComponents.EMPTY.getContents());
+				MutableComponent link = (MutableComponent) Component.nullToEmpty(CreateNTL.NAME + " v" + CreateNTL.VERSION + " by rdh\nVisit us on:\n");
 				links.forEach(a -> link.append(a).append(Component.literal(" ")));
 				message(context, link);
 				return 1;
 			})
 			.then(NTLConfigCommand.register(dedicated));
 
-		LiteralCommandNode<CommandSourceStack> root = dispatcher.register(base);
-
-		CommandNode<CommandSourceStack> cu = dispatcher.findNode(Collections.singleton("ntl"));
-		if(cu != null) return;
-		dispatcher.getRoot().addChild(AllCommands.buildRedirect("ntl", root));
+		dispatcher.register(base);
 	}
 
 	protected static MutableComponent link(String link, String display, ChatFormatting color) {

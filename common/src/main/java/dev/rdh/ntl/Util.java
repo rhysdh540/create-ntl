@@ -5,6 +5,7 @@ import com.mojang.brigadier.arguments.ArgumentType;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 
 import com.simibubi.create.foundation.config.ConfigBase.CValue;
+import com.simibubi.create.foundation.config.ConfigBase.ConfigBool;
 
 import net.minecraft.commands.synchronization.ArgumentTypeInfo;
 import net.minecraft.resources.ResourceLocation;
@@ -55,5 +56,13 @@ public abstract class Util {
 			}
 			throw e;
 		}
+	}
+
+	public static boolean orTrue(ConfigBool value) {
+		return orElse(value, true);
+	}
+
+	public static boolean orFalse(ConfigBool value) {
+		return orElse(value, false);
 	}
 }
