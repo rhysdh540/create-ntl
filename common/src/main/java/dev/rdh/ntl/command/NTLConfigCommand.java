@@ -8,7 +8,7 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 
-import dev.rdh.createunlimited.mixin.accessor.CValueAccessor;
+import dev.rdh.ntl.mixin.accessor.CValueAccessor;
 import dev.rdh.ntl.CreateNTL;
 import dev.rdh.ntl.config.NTLConfigs;
 import dev.rdh.ntl.config.NTLServer;

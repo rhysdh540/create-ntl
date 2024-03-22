@@ -96,5 +96,6 @@ public class UtilImpl {
 	}
 
 	public static boolean isModLoaded(String modid) {
+		return FabricLoader.getInstance().isModLoaded(modid);
 	}
 }
