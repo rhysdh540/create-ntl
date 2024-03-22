@@ -9,6 +9,9 @@
     "accessor.CValueAccessor",
     "accessor.PlacementInfoAccessor"
   ],
+  "server": [
+    "CTrainsMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

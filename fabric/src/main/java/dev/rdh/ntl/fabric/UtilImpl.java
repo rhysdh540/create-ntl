@@ -1,7 +1,5 @@
 package dev.rdh.ntl.fabric;
 
-import com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes;
-
 import com.mojang.brigadier.arguments.ArgumentType;
 
 import dev.rdh.ntl.CreateNTL;
@@ -13,7 +11,6 @@ import net.minecraft.commands.synchronization.ArgumentTypeInfo;
 
 import net.minecraft.resources.ResourceLocation;
 
-import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraftforge.fml.config.IConfigSpec;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.config.ModConfig.Type;
@@ -85,10 +82,6 @@ public class UtilImpl {
 
 	public static boolean isDevEnv() {
 		return FabricLoader.getInstance().isDevelopmentEnvironment();
-	}
-
-	public static Attribute getReachAttribute() {
-		return ReachEntityAttributes.REACH;
 	}
 
 	public static String platformName() {
