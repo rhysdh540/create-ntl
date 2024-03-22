@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "ntl",
+  "version": "${version}",
+  "name": "Create NTL",
+  "description": "TODO description",
+  "authors": [ "rdh" ],
+  "contact": {
+    "homepage": "https://github.com/rhysdh540/create-ntl",
+    "sources": "https://github.com/rhysdh540/create-ntl",
+    "issues": "https://github.com/rhysdh540/create-ntl/issues"
+  },
+  "license": "GPL-3.0-or-later",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.rdh.ntl.fabric.CreateNTLFabric"
+    ],
+    "modmenu": [ "dev.rdh.ntl.fabric.ModMenuIntegration" ]
+  },
+  "mixins": [
+    "ntl.mixins.json"
+  ],
+  "depends": {
+    "minecraft": ["1.19.2", "1.20.1"],
+    "fabricloader": ">=${fabric}",
+    "fabric-api": "*",
+    "create": ">=${create}-a"
+  },
+  "custom": {
+    "modmenu": {
+      "parent": {
+        "id": "create"
+      },
+      "links": {
+        "Discord": "https://discord.gg/GeGm3DRDWY"
+      }
+    }
+  }
+}

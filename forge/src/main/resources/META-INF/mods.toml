@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+issueTrackerURL = "https://github.com/rhysdh540/create-ntl/issues"
+license = "GPL-3.0-or-later"
+
+[[mods]]
+modId = "ntl"
+version = "${version}"
+displayName = "Create NTL"
+authors = "rdh"
+description = '''
+TODO description
+'''
+logoFile = "icon.png"
+
+[[dependencies.ntl]]
+modId = "forge"
+mandatory = true
+versionRange = "[1,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.ntl]]
+modId = "minecraft"
+mandatory = true
+versionRange = "${minecraft}"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.ntl]]
+modId="create"
+mandatory=true
+versionRange="[${create},)"
+ordering="AFTER"
+side="BOTH"

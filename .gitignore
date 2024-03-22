@@ -1,0 +1,15 @@
+build/
+!**/src/**/build/
+**/run/
+*.iml
+.gradle/
+.idea/
+.DS_Store
+artifacts/
+.architectury-transformer/
+
+## eclipse bad ##
+.classpath
+.project
+.settings/
+**/module-info.java

@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.rdh.ntl.mixin",
+  "plugin": "dev.rdh.ntl.NTLMixinConfig",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "TrackPlacementMixin",
+    "accessor.PlacementInfoAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
